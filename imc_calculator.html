@@ -32,9 +32,11 @@ div#res {
     <input type="number" name="txtn2" id="txtn2">
     <input type="button" value="Calcular" onclick="somar()">
     <div id = "res"><br></div><br>
+    <div id = "opn"><br></div><br>
     <img src="C:\Users\PICHAU\Downloads\Programação\Nova pasta\unnamed.jpg" alt="Impossível carregar a imagem" width=600 height=235.5>
     <script>
         function somar() {
+            var opn = document.getElementById("opn");
             var tn1 = document.getElementById("txtn1");
             var tn2 = document.querySelector("input#txtn2");
             var res = document.getElementById("res");
@@ -44,17 +46,13 @@ div#res {
             var arred = resul.toFixed(2);
             res.innerHTML = `Seu IMC é igual a <strong>${arred}</strong> kg/m<sup>2</sup>`;
         
-            //if (arred < 18.5) {
-            //document.write("Você está abaixo da média.")
-           // }
-            //if (18.5 <= arred <= 24.9) {
-           // document.write("Você está no peso ideial!")
-           // }
+            if (arred < 18.5) {
+            opn.innerText = "Você está abaixo da média."
+           }
+            if (18.5 <= arred <= 24.9) {
+           opn.innerText = "Você está no peso ideial!"
+           }
         }
-
-        
-        
-
 
     </script>
 </body>
